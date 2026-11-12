@@ -1,0 +1,14 @@
+---
+title: "Introduction to R"
+---
+
+Welcome to Introduction to R!
+
+## Course Overview
+
+This ad-hoc course introduces students to basic R programming for data analysis. Students will learn how to manipulate data, perform statistical and econometric analysis, and visualize data using R.  
+
+## Announcements
+
+- The first session will meet on Wednesday, November 18, 2026 from 1:00 PM to 2:30 PM in Seminar Room 307, Economics Building 1. 
+

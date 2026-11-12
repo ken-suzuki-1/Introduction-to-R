@@ -1,0 +1,10 @@
+---
+title: "Session 1: Introduction"
+---
+
+## What is R?
+R is a programming language and environment for statistical computing and graphics. It is widely used for data analysis, statistical modeling, and visualization.
+
+## Why Use R?
+R is free and open-source, has a large ecosystem of packages, and is widely used in academia and industry for data analysis and visualization.
+
