@@ -6,5 +6,5 @@ Sessions
 
 ## Sessions
 
-- [Session 1](sessions/session01.qmd)
+- [Session 1](session01.qmd)
 
