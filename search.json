@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "sessions/session01.html",
+    "href": "sessions/session01.html",
+    "title": "Session 1: Introduction",
+    "section": "",
+    "text": "R is a programming language and environment for statistical computing and graphics. It is widely used for data analysis, statistical modeling, and visualization."
+  },
+  {
+    "objectID": "sessions/session01.html#what-is-r",
+    "href": "sessions/session01.html#what-is-r",
+    "title": "Session 1: Introduction",
+    "section": "",
+    "text": "R is a programming language and environment for statistical computing and graphics. It is widely used for data analysis, statistical modeling, and visualization."
+  },
+  {
+    "objectID": "sessions/session01.html#why-use-r",
+    "href": "sessions/session01.html#why-use-r",
+    "title": "Session 1: Introduction",
+    "section": "Why Use R?",
+    "text": "Why Use R?\nR is free and open-source, has a large ecosystem of packages, and is widely used in academia and industry for data analysis and visualization."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction to R",
+    "section": "",
+    "text": "Welcome to Introduction to R!"
+  },
+  {
+    "objectID": "index.html#course-overview",
+    "href": "index.html#course-overview",
+    "title": "Introduction to R",
+    "section": "Course Overview",
+    "text": "Course Overview\nThis ad-hoc course introduces students to basic R programming for data analysis. Students will learn how to manipulate data, perform statistical and econometric analysis, and visualize data using R."
+  },
+  {
+    "objectID": "index.html#announcements",
+    "href": "index.html#announcements",
+    "title": "Introduction to R",
+    "section": "Announcements",
+    "text": "Announcements\n\nThe first session will meet on Wednesday, November 18, 2026 from 1:00 PM to 2:30 PM in Seminar Room 307, Economics Building 1."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "sessions/index.html",
+    "href": "sessions/index.html",
+    "title": "Sessions",
+    "section": "",
+    "text": "Sessions"
+  },
+  {
+    "objectID": "sessions/index.html#sessions",
+    "href": "sessions/index.html#sessions",
+    "title": "Sessions",
+    "section": "Sessions",
+    "text": "Sessions\n\nSession 1"
+  }
+]

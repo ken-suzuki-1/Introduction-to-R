@@ -1,0 +1,1 @@
+Sitemap: https://ken-suzuki-1.github.io/Introduction-to-R/sitemap.xml
