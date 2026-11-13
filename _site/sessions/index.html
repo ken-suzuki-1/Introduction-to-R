@@ -160,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="sessions" class="level2">
 <h2 class="anchored" data-anchor-id="sessions">Sessions</h2>
 <ul>
-<li><a href="sessions/session01.qmd">Session 1</a></li>
+<li><a href="../sessions/session01.html">Session 1</a></li>
 </ul>
 
 
@@ -240,7 +240,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/ken-suzuki-1\.github\.io\/Introduction-to-R\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

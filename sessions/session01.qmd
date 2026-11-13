@@ -8,3 +8,16 @@ R is a programming language and environment for statistical computing and graphi
 ## Why Use R?
 R is free and open-source, has a large ecosystem of packages, and is widely used in academia and industry for data analysis and visualization.
 
+
+## Basic R functions
+
+```{r}
+abs(-2)  # absolute value of -2
+sqrt(4)  # square root of 4
+exp(2)   # exponential function (e(=2.71) to the power of 2)
+log(1)   # natural log
+log(8, 2) # log of 8 to base 2
+round(3.14159, 2) # round 3.14159 to 2 digits
+choose(4, 2) # Binomial coefficient "4 choose 2"
+
+```
