@@ -21,6 +21,13 @@
     "text": "Why Use R?\nR is free and open-source, has a large ecosystem of packages, and is widely used in academia and industry for data analysis and visualization."
   },
   {
+    "objectID": "sessions/session01.html#basic-r-functions",
+    "href": "sessions/session01.html#basic-r-functions",
+    "title": "Session 1: Introduction",
+    "section": "Basic R functions",
+    "text": "Basic R functions\n\nabs(-2)  # absolute value of -2\n\n[1] 2\n\nsqrt(4)  # square root of 4\n\n[1] 2\n\nexp(2)   # exponential function (e(=2.71) to the power of 2)\n\n[1] 7.389056\n\nlog(1)   # natural log\n\n[1] 0\n\nlog(8, 2) # log of 8 to base 2\n\n[1] 3\n\nround(3.14159, 2) # round 3.14159 to 2 digits\n\n[1] 3.14\n\nchoose(4, 2) # Binomial coefficient \"4 choose 2\"\n\n[1] 6"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Introduction to R",
