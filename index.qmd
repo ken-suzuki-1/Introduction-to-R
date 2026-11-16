@@ -15,7 +15,7 @@ Welcome to Introduction to R!
 - Use AIs wisely. 
 - Nowadays, you can vibe-code R scripts with AI assistants. 
   - You describe what you want to do in natural language. Then the AI agent generates and execute the code on your behalf. 
-  - So you do not necessarily memorize every single command. You can always ask or delegate coding tasks to AIs. 
+  - So you do not necessarily have to memorize every single command. You can always ask or delegate coding tasks to AIs. 
 - But you still need to know basics and big pictures because
   - you need to ask and frame your questions properly.  
   - AIs make mistakes, and you have to catch their mistakes.
