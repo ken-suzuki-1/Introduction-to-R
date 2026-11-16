@@ -6,7 +6,20 @@ Welcome to Introduction to R!
 
 ## Course Overview
 
-This ad-hoc course introduces students to basic R programming for data analysis. Students will learn how to manipulate data, perform statistical and econometric analysis, and visualize data using R.  
+- This ad-hoc website intends to help students self-study R programming.
+- Students will learn how to manipulate data, perform statistical and econometric analysis, and visualize data using R. 
+ 
+
+## Artificial Intelligence (AI)
+- I highly encourage students to use AIs to learn R (and other) programming. 
+- Use AIs wisely. 
+- Nowadays, you can vibe-code R scripts with AI assistants. 
+  - You describe what you want to do in natural language. Then the AI agent generates and execute the code on your behalf. 
+  - So you do not necessarily memorize every single command. You can always ask or delegate coding tasks to AIs. 
+- But you still need to know basics and big pictures because
+  - you need to ask and frame your questions properly.  
+  - AIs make mistakes, and you have to catch their mistakes.
+- Always check and verify what AIs do or suggest. Ultimately, you are the one who bears responsibility for the outcomes and final products from data analysis. 
 
 ## Useful Resources
 
