@@ -67,7 +67,7 @@
     "href": "index.html#artificial-intelligence-ai",
     "title": "Introduction to R",
     "section": "Artificial Intelligence (AI)",
-    "text": "Artificial Intelligence (AI)\n\nI highly encourage students to use AIs to learn R (and other) programming.\nUse AIs wisely.\nNowadays, you can vibe-code R scripts with AI assistants.\n\nYou describe what you want to do in natural language. Then the AI agent generates and execute the code on your behalf.\nSo you do not necessarily memorize every single command. You can always ask or delegate coding tasks to AIs.\n\nBut you still need to know basics and big pictures because\n\nyou need to ask and frame your questions properly.\n\nAIs make mistakes, and you have to catch their mistakes.\n\nAlways check and verify what AIs do or suggest. Ultimately, you are the one who bears responsibility for the outcomes and final products from data analysis."
+    "text": "Artificial Intelligence (AI)\n\nI highly encourage students to use AIs to learn R (and other) programming.\nUse AIs wisely.\nNowadays, you can vibe-code R scripts with AI assistants.\n\nYou describe what you want to do in natural language. Then the AI agent generates and execute the code on your behalf.\nSo you do not necessarily have to memorize every single command. You can always ask or delegate coding tasks to AIs.\n\nBut you still need to know basics and big pictures because\n\nyou need to ask and frame your questions properly.\n\nAIs make mistakes, and you have to catch their mistakes.\n\nAlways check and verify what AIs do or suggest. Ultimately, you are the one who bears responsibility for the outcomes and final products from data analysis."
   },
   {
     "objectID": "index.html#useful-resources",
