@@ -5,11 +5,36 @@ title: "Session 1: Introduction"
 ## What is R?
 R is a programming language and environment for statistical computing and graphics. It is widely used for data analysis, statistical modeling, and visualization.
 
-## Why Use R?
+## Why use R?
 R is free and open-source, has a large ecosystem of packages, and is widely used in academia and industry for data analysis and visualization.
 
+## Install R and RStudio
+- While R can be used on its own, its bare interface is not user-friendly. 
+- People often use R on RStudio, an integrated development environment (IDE).
+- RStudio provides many useful functionalities beyond coding and data analysis. This website is created with RStudio (combined with [Quarto](https://quarto.org/)).  
+- Download and install [R](https://cran.r-project.org/) and [RStudio Desktop](https://posit.co/downloads).
 
-## Basic R functions
+
+## RStudio User Guide
+- [The official RStudio user guide](https://docs.posit.co/ide/user/) is provided by Posit. For starters, check out the following subsections: 
+  - [Hello RStudio: RStudio Panes](https://docs.posit.co/ide/user/ide/get-started/#rstudio-panes)
+  - [Hello RStudio: Blank slate](https://docs.posit.co/ide/user/ide/get-started/#blank-slate)
+  - [Hello RStudio: Hello RStudio Projects](https://docs.posit.co/ide/user/ide/get-started/#hello-rstudio-projects)
+
+
+
+
+## Base R
+
+### A function to clear working memory.  
+
+```{r}
+rm(list = ls())
+```
+
+### Basic R functions
+A function takes input(s) and returns an output. For example, $f(x)=x^2$ takes a real number $x$ and return the square of it as an output. 
+R has many built-in functions so you often do not have to program basic mathematical operations. 
 
 ```{r}
 abs(-2)  # absolute value of -2
@@ -19,5 +44,160 @@ log(1)   # natural log
 log(8, 2) # log of 8 to base 2
 round(3.14159, 2) # round 3.14159 to 2 digits
 choose(4, 2) # Binomial coefficient "4 choose 2"
-
 ```
+
+
+You can define a function on your own.
+
+```{r}
+f1 <- function(x, y) {
+  
+  z <- x + y
+  return(z)
+  
+} 
+```
+
+If you plug $x=3$ and $y = 4$, 
+```{r}
+f1(x = 3, y = 4)
+```
+
+### Vectors
+You can create a vector of numbers (or other types of information).
+```{r}
+a <- c(1, 2, 3) # Generate a 3-dimensional vector a using "c()". 
+b <- c(4, 5, 6)
+```
+
+You can perform vector algebra.
+```{r}
+c <- a + b # Vector addition
+c
+```
+
+```{r}
+d <- b - a # Vector subtraction
+d
+```
+
+```{r}
+e <- a * b # Element-by-element multiplication
+e
+```
+
+```{r}
+f <- a %*% b # Inner product of a and b (1*4 + 2*5 + 3*6 = 4 + 10 + 18 = 32)
+f
+```
+
+### R functions for vectors
+ 
+R has built-in functions to work with vectors. For example, 
+```{r}
+length(a) # Get dimension of vector a
+max(a) # Maximum value in vector a
+min(a) # Minimum value in vector a
+sum(a) # Sum of the elements of vector a (1+2+3=6)
+prod(a) # Product of the elements of vector a (1*2*3=6)
+```
+
+The following functions make your life easier when you want to create a vector that repeats the same number five times or a vector that includes 10 consecutive numbers from 1 to 10, etc.   
+
+```{r}
+zeros <- numeric(5) # Generate a 5-dimensional vector with 5 zeros.
+zeros
+```
+
+```{r}
+g <- rep(3, 5) # Generate a 5-dimensional vector with five 3s.
+g
+```
+
+```{r}
+h <- seq(10) # Generate a vector of sequence from 1 to 10.
+h
+```
+
+```{r}
+i <- seq(11, 20) # Generate a vector of sequence from 11 to 20.
+i
+```
+
+```{r}
+j <- seq(11, 20, 2) # Generate a vector of sequence from 11 to 20 in steps 2.
+j
+```
+
+### Special Types of Vectors 
+Vectors can contain string values (="texts" that consist of characters, numbers, symbols, or spaces).
+```{r}
+# A vector of string values
+CA <- c("San Francisco", "San Jose", "Santa Cruz")
+CA
+```
+
+
+```{r}
+# Logical operators tell you whether a statement is true or false. 
+2 == 2  # 2 is equal to 2.
+2 <= 2  # 2 is greater than or equal to 2.
+2 < 2   # 2 is strictly greater than  2.
+2 != 3  # 2 is not equal to 3.
+```
+
+```{r}
+c(2 == 2, 2 <= 2, 2 < 2, 2 != 3 )
+```
+
+```{r}
+# Logical Vector (Store TRUE/FALSE results of element-wise comparison.)
+k <- a < b
+k
+l <- a < d
+l
+```
+
+Factor vectors (or variables) are a very useful and efficient way to manage categorical and qualitative information. For instance, we have seven students who come from either 1) Tokyo, 2) Kanagawa, or 3) Chiba. We want to create a vector recording this categorical information.
+
+```{r}
+student <- c(1,3,2,2,1,3,3) # Want R to recognize and label 1=in-state, 2=out-of-state, 3=international
+student
+studentlabel <- factor(student, labels = c("Tokyo", "Kanagawa", "Chiba")) # 1=Tokyo, 2=Kanagawa, 3=Chiba
+studentlabel
+```
+
+### Naming and Indexing Vectors
+You can name each element of a vector.
+
+```{r}
+# Generate a vector with population size for 3 counties.
+population <- c(10014009, 3298634, 3186989)
+population
+# Create a vector storing county names
+counties <- c("Los Angeles", "San Diego", "Orange")
+
+# Name each element of "population" vector.
+names(population) <- counties
+population
+```
+
+You can access a specific element of a vector. 
+```{r}
+# To select the n th element of a vector, add [n] after vector name.
+population[2]
+
+# To select the n th to the m th contiguous elements, use [n:m]
+population[2:3]
+
+# You can select an element of a vector by writing a condition in [ ]
+population[ population > 10000000]
+population["San Diego"] # You can use a unique element name as a condition. Don't forget ""
+```
+
+
+### Data Frames and Data Files
+
+
+## Tidyverse
+
