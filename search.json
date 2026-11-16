@@ -63,6 +63,13 @@
     "text": "Course Overview\nThis ad-hoc course introduces students to basic R programming for data analysis. Students will learn how to manipulate data, perform statistical and econometric analysis, and visualize data using R."
   },
   {
+    "objectID": "index.html#useful-resources",
+    "href": "index.html#useful-resources",
+    "title": "Introduction to R",
+    "section": "Useful Resources",
+    "text": "Useful Resources\n\nOfficial Websites\n\nR\nRStudio Desktop\nOfficial RStudio user guide\n\n\n\nTextbooks: Data Analysis\n\nR for Data Science\n\n\n\nTextbooks: Econometrics\n\nUsing R, Python and Julia for Introductory Econometrics by Florian Heiss: This free textbook is an empirical companion to Introductory Econometrics by Jeffrey M. Wooldridge.\n\nUsing R for Introductory Econometrics\n\nIntroduction to Econometrics with R: This free textbook is an empirical companion to Introduction to Econometrics by Stock and Watson, another standard econometrics textbook.\n\n\n\nPublicly Available Datasets\n\nIPUMS"
+  },
+  {
     "objectID": "index.html#announcements",
     "href": "index.html#announcements",
     "title": "Introduction to R",
