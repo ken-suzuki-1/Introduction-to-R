@@ -326,13 +326,13 @@ points(-7, 0.3) # This allows you to add a point at (x,y)=(-7, 0.3).
 - To install a new package(s), run *install.packages("package name")* 
 
 ```{r}
-install.packages("tidyverse")
+# install.packages("tidyverse") # Remove the initial # before running the command.
 ```
 
 - To install multiple packages at once,
 
 ```{r}
-install.packages(c("ggthemes", "data.table", "haven", "here", "tictoc", "janitor", "fixest", "fs"))
+# install.packages(c("ggthemes", "data.table", "haven", "here", "tictoc", "janitor", "fixest", "fs")) # Remove the initial # before running the command.
 ```
 
 - R script often begins with a preamble to load packages. 
