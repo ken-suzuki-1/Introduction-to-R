@@ -17,22 +17,36 @@
     "objectID": "sessions/session01.html#why-use-r",
     "href": "sessions/session01.html#why-use-r",
     "title": "Session 1: Introduction",
-    "section": "Why Use R?",
-    "text": "Why Use R?\nR is free and open-source, has a large ecosystem of packages, and is widely used in academia and industry for data analysis and visualization."
+    "section": "Why use R?",
+    "text": "Why use R?\nR is free and open-source, has a large ecosystem of packages, and is widely used in academia and industry for data analysis and visualization."
   },
   {
     "objectID": "sessions/session01.html#install-r-and-rstudio",
     "href": "sessions/session01.html#install-r-and-rstudio",
     "title": "Session 1: Introduction",
     "section": "Install R and RStudio",
-    "text": "Install R and RStudio"
+    "text": "Install R and RStudio\n\nWhile R can be used on its own, its bare interface is not user-friendly.\nPeople often use R on RStudio, an integrated development environment (IDE).\nRStudio provides many useful functionalities beyond coding and data analysis. This website is created with RStudio (combined with Quarto).\n\nDownload and install R and RStudio Desktop."
   },
   {
-    "objectID": "sessions/session01.html#basic-r-functions",
-    "href": "sessions/session01.html#basic-r-functions",
+    "objectID": "sessions/session01.html#rstudio-user-guide",
+    "href": "sessions/session01.html#rstudio-user-guide",
     "title": "Session 1: Introduction",
-    "section": "Basic R functions",
-    "text": "Basic R functions\nA function takes input(s) and returns an output. For example, \\(f(x)=x^2\\) takes a real number \\(x\\) and return the square of it as an output. R has many built-in functions so you often do not have to program basic mathematical operations.\n\nabs(-2)  # absolute value of -2\n\n[1] 2\n\nsqrt(4)  # square root of 4\n\n[1] 2\n\nexp(2)   # exponential function (e(=2.71) to the power of 2)\n\n[1] 7.389056\n\nlog(1)   # natural log\n\n[1] 0\n\nlog(8, 2) # log of 8 to base 2\n\n[1] 3\n\nround(3.14159, 2) # round 3.14159 to 2 digits\n\n[1] 3.14\n\nchoose(4, 2) # Binomial coefficient \"4 choose 2\"\n\n[1] 6"
+    "section": "RStudio User Guide",
+    "text": "RStudio User Guide\n\nThe official RStudio user guide is provided by Posit. For starters, check out the following subsections:\n\nHello RStudio: RStudio Panes\nHello RStudio: Blank slate\nHello RStudio: Hello RStudio Projects"
+  },
+  {
+    "objectID": "sessions/session01.html#base-r",
+    "href": "sessions/session01.html#base-r",
+    "title": "Session 1: Introduction",
+    "section": "Base R",
+    "text": "Base R\n\nA function to clear working memory.\n\nrm(list = ls())\n\n\n\nBasic R functions\nA function takes input(s) and returns an output. For example, \\(f(x)=x^2\\) takes a real number \\(x\\) and return the square of it as an output. R has many built-in functions so you often do not have to program basic mathematical operations.\n\nabs(-2)  # absolute value of -2\n\n[1] 2\n\nsqrt(4)  # square root of 4\n\n[1] 2\n\nexp(2)   # exponential function (e(=2.71) to the power of 2)\n\n[1] 7.389056\n\nlog(1)   # natural log\n\n[1] 0\n\nlog(8, 2) # log of 8 to base 2\n\n[1] 3\n\nround(3.14159, 2) # round 3.14159 to 2 digits\n\n[1] 3.14\n\nchoose(4, 2) # Binomial coefficient \"4 choose 2\"\n\n[1] 6\n\n\nYou can define a function on your own.\n\nf1 &lt;- function(x, y) {\n  \n  z &lt;- x + y\n  return(z)\n  \n} \n\nIf you plug \\(x=3\\) and \\(y = 4\\),\n\nf1(x = 3, y = 4)\n\n[1] 7\n\n\n\n\nVectors\nYou can create a vector of numbers (or other types of information).\n\na &lt;- c(1, 2, 3) # Generate a 3-dimensional vector a using \"c()\". \nb &lt;- c(4, 5, 6)\n\nYou can perform vector algebra.\n\nc &lt;- a + b # Vector addition\nc\n\n[1] 5 7 9\n\n\n\nd &lt;- b - a # Vector subtraction\nd\n\n[1] 3 3 3\n\n\n\ne &lt;- a * b # Element-by-element multiplication\ne\n\n[1]  4 10 18\n\n\n\nf &lt;- a %*% b # Inner product of a and b (1*4 + 2*5 + 3*6 = 4 + 10 + 18 = 32)\nf\n\n     [,1]\n[1,]   32\n\n\n\n\nR functions for vectors\nR has built-in functions to work with vectors. For example,\n\nlength(a) # Get dimension of vector a\n\n[1] 3\n\nmax(a) # Maximum value in vector a\n\n[1] 3\n\nmin(a) # Minimum value in vector a\n\n[1] 1\n\nsum(a) # Sum of the elements of vector a (1+2+3=6)\n\n[1] 6\n\nprod(a) # Product of the elements of vector a (1*2*3=6)\n\n[1] 6\n\n\nThe following functions make your life easier when you want to create a vector that repeats the same number five times or a vector that includes 10 consecutive numbers from 1 to 10, etc.\n\nzeros &lt;- numeric(5) # Generate a 5-dimensional vector with 5 zeros.\nzeros\n\n[1] 0 0 0 0 0\n\n\n\ng &lt;- rep(3, 5) # Generate a 5-dimensional vector with five 3s.\ng\n\n[1] 3 3 3 3 3\n\n\n\nh &lt;- seq(10) # Generate a vector of sequence from 1 to 10.\nh\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\n\ni &lt;- seq(11, 20) # Generate a vector of sequence from 11 to 20.\ni\n\n [1] 11 12 13 14 15 16 17 18 19 20\n\n\n\nj &lt;- seq(11, 20, 2) # Generate a vector of sequence from 11 to 20 in steps 2.\nj\n\n[1] 11 13 15 17 19\n\n\n\n\nSpecial Types of Vectors\nVectors can contain string values (=“texts” that consist of characters, numbers, symbols, or spaces).\n\n# A vector of string values\nCA &lt;- c(\"San Francisco\", \"San Jose\", \"Santa Cruz\")\nCA\n\n[1] \"San Francisco\" \"San Jose\"      \"Santa Cruz\"   \n\n\n\n# Logical operators tell you whether a statement is true or false. \n2 == 2  # 2 is equal to 2.\n\n[1] TRUE\n\n2 &lt;= 2  # 2 is greater than or equal to 2.\n\n[1] TRUE\n\n2 &lt; 2   # 2 is strictly greater than  2.\n\n[1] FALSE\n\n2 != 3  # 2 is not equal to 3.\n\n[1] TRUE\n\n\n\nc(2 == 2, 2 &lt;= 2, 2 &lt; 2, 2 != 3 )\n\n[1]  TRUE  TRUE FALSE  TRUE\n\n\n\n# Logical Vector (Store TRUE/FALSE results of element-wise comparison.)\nk &lt;- a &lt; b\nk\n\n[1] TRUE TRUE TRUE\n\nl &lt;- a &lt; d\nl\n\n[1]  TRUE  TRUE FALSE\n\n\nFactor vectors (or variables) are a very useful and efficient way to manage categorical and qualitative information. For instance, we have seven students who come from either 1) Tokyo, 2) Kanagawa, or 3) Chiba. We want to create a vector recording this categorical information.\n\nstudent &lt;- c(1,3,2,2,1,3,3) # Want R to recognize and label 1=in-state, 2=out-of-state, 3=international\nstudent\n\n[1] 1 3 2 2 1 3 3\n\nstudentlabel &lt;- factor(student, labels = c(\"Tokyo\", \"Kanagawa\", \"Chiba\")) # 1=Tokyo, 2=Kanagawa, 3=Chiba\nstudentlabel\n\n[1] Tokyo    Chiba    Kanagawa Kanagawa Tokyo    Chiba    Chiba   \nLevels: Tokyo Kanagawa Chiba\n\n\n\n\nNaming and Indexing Vectors\nYou can name each element of a vector.\n\n# Generate a vector with population size for 3 counties.\npopulation &lt;- c(10014009, 3298634, 3186989)\npopulation\n\n[1] 10014009  3298634  3186989\n\n# Create a vector storing county names\ncounties &lt;- c(\"Los Angeles\", \"San Diego\", \"Orange\")\n\n# Name each element of \"population\" vector.\nnames(population) &lt;- counties\npopulation\n\nLos Angeles   San Diego      Orange \n   10014009     3298634     3186989 \n\n\nYou can access a specific element of a vector.\n\n# To select the n th element of a vector, add [n] after vector name.\npopulation[2]\n\nSan Diego \n  3298634 \n\n# To select the n th to the m th contiguous elements, use [n:m]\npopulation[2:3]\n\nSan Diego    Orange \n  3298634   3186989 \n\n# You can select an element of a vector by writing a condition in [ ]\npopulation[ population &gt; 10000000]\n\nLos Angeles \n   10014009 \n\npopulation[\"San Diego\"] # You can use a unique element name as a condition. Don't forget \"\"\n\nSan Diego \n  3298634 \n\n\n\n\nData Frames and Data Files"
+  },
+  {
+    "objectID": "sessions/session01.html#tidyverse",
+    "href": "sessions/session01.html#tidyverse",
+    "title": "Session 1: Introduction",
+    "section": "Tidyverse",
+    "text": "Tidyverse"
   },
   {
     "objectID": "index.html",

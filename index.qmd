@@ -8,6 +8,24 @@ Welcome to Introduction to R!
 
 This ad-hoc course introduces students to basic R programming for data analysis. Students will learn how to manipulate data, perform statistical and econometric analysis, and visualize data using R.  
 
+## Useful Resources
+
+### Official Websites
+- [R](https://cran.r-project.org/) 
+- [RStudio Desktop](https://posit.co/downloads)
+- [Official RStudio user guide](https://docs.posit.co/ide/user/)
+
+### Textbooks: Data Analysis 
+- [R for Data Science](https://r4ds.hadley.nz/)
+
+### Textbooks: Econometrics
+- [Using R, Python and Julia for Introductory Econometrics](https://www.urfie.net/) by Florian Heiss: This free textbook is an empirical companion to *Introductory Econometrics* by Jeffrey M. Wooldridge.
+  - [Using R for Introductory Econometrics](https://www.urfie.net/downloads/PDF/URfIE_web.pdf)
+- [Introduction to Econometrics with R](https://www.econometrics-with-r.org/): This free textbook is an empirical companion to *Introduction to Econometrics* by Stock and Watson, another standard econometrics textbook.      
+
+### Publicly Available Datasets
+- [IPUMS](https://www.ipums.org/)
+
 ## Announcements
 
 - The first session will meet on Wednesday, November 18, 2026 from 1:00 PM to 2:30 PM in Seminar Room 307, Economics Building 1. 
