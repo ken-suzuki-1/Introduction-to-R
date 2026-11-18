@@ -81,7 +81,7 @@
     "href": "index.html#announcements",
     "title": "Introduction to R",
     "section": "Announcements",
-    "text": "Announcements\n\nThe first session will meet on Wednesday, November 18, 2026 from 1:00 PM to 2:30 PM in Seminar Room 307, Economics Building 1."
+    "text": "Announcements\n\nThe first session will meet on Wednesday, November 18, 2026 from 1:00 PM to 2:30 PM in Seminar Room 307, Economics Building 1.\nThe second session will meet on Wednesday, November 25, 2026 from 1:00 PM to 2:30 PM. If you have any problems that you want to work with me, please send them in advance."
   },
   {
     "objectID": "about.html",
@@ -102,6 +102,6 @@
     "href": "sessions/index.html#sessions",
     "title": "Sessions",
     "section": "Sessions",
-    "text": "Sessions\n\nSession 1"
+    "text": "Sessions\n\nSession 1: Introduction to R (R script from class)"
   }
 ]
