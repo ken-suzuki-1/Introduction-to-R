@@ -203,7 +203,7 @@ window.Quarto = {
   <li><a href="#housekeeping" id="toc-housekeeping" class="nav-link" data-scroll-target="#housekeeping">Housekeeping</a></li>
   <li><a href="#loop" id="toc-loop" class="nav-link" data-scroll-target="#loop">Loop</a></li>
   <li><a href="#exercise-2-1" id="toc-exercise-2-1" class="nav-link" data-scroll-target="#exercise-2-1">Exercise 2-1</a></li>
-  <li><a href="#vectorization-parallel-processing-and-functional-programming" id="toc-vectorization-parallel-processing-and-functional-programming" class="nav-link" data-scroll-target="#vectorization-parallel-processing-and-functional-programming">Vectorization, Parallel Processing, and Functional Programming</a></li>
+  <li><a href="#vectorization-and-functional-programming" id="toc-vectorization-and-functional-programming" class="nav-link" data-scroll-target="#vectorization-and-functional-programming">Vectorization and Functional Programming</a></li>
   <li><a href="#exercise-2-2" id="toc-exercise-2-2" class="nav-link" data-scroll-target="#exercise-2-2">Exercise 2-2</a></li>
   </ul></li>
   <li><a href="#managing-research-project-in-r" id="toc-managing-research-project-in-r" class="nav-link" data-scroll-target="#managing-research-project-in-r">Managing Research Project in R</a>
@@ -245,9 +245,9 @@ window.Quarto = {
 <li>Calculate the average household income for each of 47 prefectures.</li>
 <li>Estimate the effects of vaccination on outpatient visits, emergency department visits, and inpatient admissions (three outcome variables).</li>
 </ul></li>
-<li>R can handle these repetitive tasks very efficiently in two ways:
+<li>R can handle these repetitive tasks in several different ways:
 <ul>
-<li>loop</li>
+<li>for loop</li>
 <li>vectorized operation</li>
 </ul></li>
 </ul>
@@ -339,21 +339,12 @@ window.Quarto = {
 </ul></li>
 </ul>
 </section>
-<section id="vectorization-parallel-processing-and-functional-programming" class="level3">
-<h3 class="anchored" data-anchor-id="vectorization-parallel-processing-and-functional-programming">Vectorization, Parallel Processing, and Functional Programming</h3>
+<section id="vectorization-and-functional-programming" class="level3">
+<h3 class="anchored" data-anchor-id="vectorization-and-functional-programming">Vectorization and Functional Programming</h3>
 <ul>
-<li><p>A for-loop concisely handles repetitive tasks, as we have seen in toy examples above.</p></li>
-<li><p>However, a for-loop is very time-consuming when an input becomes large because it implements the given task sequentially.</p></li>
-<li><p>A faster alternative may be to vectorize and parallelly process the task. Namely,</p>
-<ul>
-<li>take the vector input,</li>
-<li>distribute its elements to multiple computers (or cores/processors),</li>
-<li>implement the task in parallel, and</li>
-<li>gather the results into an output vector</li>
-</ul></li>
-<li><p>This approach is often called “map-reduce.”</p></li>
-<li><p>While real parallel processing requires more elaborate setup, I introduce some flavor here.</p></li>
-<li><p>As a toy example, suppose we have the same computational task as above:</p>
+<li>A for-loop handles repetitive tasks, as we have seen in the previous toy examples.</li>
+<li>Instead, you can define your computational task as a function. Then you apply the function to each element of an input vector (or list).</li>
+<li>As a toy example, suppose we consider the same computational task again:
 <ul>
 <li>We have a six-dimensional vector (1,2,3,4,5,6).</li>
 <li>For each element of the vector,
@@ -364,7 +355,7 @@ window.Quarto = {
 </ul></li>
 <li>Given the vector (1,2,3,4,5,6), we should get (1,8,27,25,36).</li>
 </ul></li>
-<li><p>We use purrr from tidyverse.</p>
+<li>We use purrr from tidyverse.
 <ul>
 <li>The <a href="https://tidyverse.org/">tidyverse</a> is a collection of R packages for data science.</li>
 </ul></li>
@@ -394,7 +385,7 @@ window.Quarto = {
 <pre><code>[1] 27</code></pre>
 </div>
 </div>
-<p>You put together the results in a list.</p>
+<p>map() puts together the results in a list.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">map</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">.f =</span> f1)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>e</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
