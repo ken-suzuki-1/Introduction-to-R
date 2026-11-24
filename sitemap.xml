@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ken-suzuki-1.github.io/Introduction-to-R/sessions/session01.html</loc>
-    <lastmod>2026-11-16T14:02:05.456Z</lastmod>
+    <loc>https://ken-suzuki-1.github.io/Introduction-to-R/sessions/session02.html</loc>
+    <lastmod>2026-11-24T04:02:27.256Z</lastmod>
   </url>
   <url>
-    <loc>https://ken-suzuki-1.github.io/Introduction-to-R/index.html</loc>
-    <lastmod>2026-11-18T05:52:42.179Z</lastmod>
+    <loc>https://ken-suzuki-1.github.io/Introduction-to-R/sessions/index.html</loc>
+    <lastmod>2026-11-24T03:54:15.574Z</lastmod>
   </url>
   <url>
     <loc>https://ken-suzuki-1.github.io/Introduction-to-R/about.html</loc>
     <lastmod>2026-11-11T18:45:58.000Z</lastmod>
   </url>
   <url>
-    <loc>https://ken-suzuki-1.github.io/Introduction-to-R/sessions/index.html</loc>
-    <lastmod>2026-11-18T05:55:04.311Z</lastmod>
+    <loc>https://ken-suzuki-1.github.io/Introduction-to-R/index.html</loc>
+    <lastmod>2026-11-18T05:52:42.179Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ken-suzuki-1.github.io/Introduction-to-R/sessions/session01.html</loc>
+    <lastmod>2026-11-16T14:02:05.456Z</lastmod>
   </url>
 </urlset>
