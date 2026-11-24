@@ -8,3 +8,5 @@ Sessions
 
 - [Session 1](session01.qmd): Introduction to R ([R script from class](files/Session01_11182026.R))
 
+- [Session 2](session02.qmd): 
+
