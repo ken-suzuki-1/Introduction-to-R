@@ -1,0 +1,286 @@
+---
+title: "Session 2: Loop, Iteration, and Data Analysis"
+execute: 
+  cache: true
+---
+
+## Introduction to Loop and Iteration
+
+- Once you start a data analysis project, you will often need to repeat the same computational task across different groups (or variables) many times. For example, you may need to 
+  - Calculate the average household income for each of 47 prefectures.
+  - Estimate the effects of vaccination on outpatient visits, emergency department visits, and inpatient admissions (three outcome variables).
+  
+- R can handle these repetitive tasks very efficiently in two ways:
+  - loop
+  - vectorized operation
+      
+### Housekeeping 
+```{r}
+rm(list = ls()) #Clear the environment.
+```
+
+### Loop  
+
+- As a toy example, suppose we have the following computational task:
+  - We have a six-dimensional vector (1,2,3,4,5,6).
+  - For each element of the vector, 
+    - we calculate the third power if the element if less than 4.
+    - we calculate the second power, otherwise.  
+  - Given the vector (1,2,3,4,5,6), we should get (1,8,27,25,36).
+
+- Define the input vector as $a$:
+```{r}
+a <- 1:6
+a
+```
+
+- Write a for-loop that implements the task iteratively over the elements of $a$:  
+```{r}
+for (x in a) {
+  # The next line begins our algorithm.
+  if (x < 4) {  
+    print(x^3)
+  } else {
+    print(x^2)
+  }
+  # The end of the algorithm.
+}
+```
+- If you want to store the result in another vector $b$,
+
+```{r}
+b <- numeric(length(a))
+
+for (i in 1:length(a)) {
+  # The next line begins our algorithm.
+  if (a[i] < 4) {  
+    b[i] <- a[i]^3
+  } else {
+    b[i] <- a[i]^2
+  }
+  # The end of the algorithm.
+}
+
+b
+```
+
+### Exercise 2-1
+
+- Solve the following problem:
+  - For each element $x$ of a vector (1,2,5,6,9,11,12), calculate
+    - $2x + 3$ if $x < 8$,
+    - $0.5x$ if $8 \leq x < 12$,
+    - $3x$, otherwise.
+  - Store the result in another vector $d$
+
+```{r}
+#| echo: false
+c <- c(1,2,5,6,9,11,12)
+d <- numeric(length(c))
+
+for (i in seq_along(c)) {
+  
+  if (c[i] < 8) {
+    
+    d[i] <- 2*c[i] + 3
+    
+  } else if (c[i] >= 8 & c[i] < 12) {
+    
+    d[i] <- 0.5*c[i]
+    
+  } else {
+    
+    d[i] <- 3*c[i]
+    
+  }
+}
+
+d
+```
+
+
+### Vectorization, Parallel Processing, and Functional Programming
+
+- A for-loop concisely handles repetitive tasks, as we have seen in toy examples above. 
+- However, a for-loop is very time-consuming when an input becomes large because it implements the given task sequentially.
+- A faster alternative may be to vectorize and parallelly process the task. Namely,
+  - take the vector input,
+  - distribute its elements to multiple computers (or cores/processors),
+  - implement the task in parallel, and
+  - gather the results into an output vector
+- This approach is often called "map-reduce."
+- While real parallel processing requires more elaborate setup, I introduce some flavor here.
+
+- As a toy example, suppose we have the same computational task as above:
+  - We have a six-dimensional vector (1,2,3,4,5,6).
+  - For each element of the vector, 
+    - we calculate the third power if the element if less than 4.
+    - we calculate the second power, otherwise.  
+  - Given the vector (1,2,3,4,5,6), we should get (1,8,27,25,36).
+
+- We use purrr from tidyverse. 
+  - The [tidyverse](https://tidyverse.org/) is a collection of R packages for data science. 
+
+```{r}
+#| output: false
+library(tidyverse)
+```
+
+- Define the task as a function:
+
+```{r}
+f1 <- function(x) {
+  # The next line begins our algorithm.
+  z <- if (x < 4) {  
+    x^3
+  } else {
+    x^2
+  }
+  
+  return(z)
+}
+```
+
+Check the function
+```{r}
+f1(x = 3)
+```
+You put together the results in a list.
+```{r}
+e <- map(1:6, .f = f1)
+e
+```
+
+### Exercise 2-2
+Repeat Exercise 2-1 using a map-reduce approach. 
+
+```{r}
+#| echo: false
+c <- c(1,2,5,6,9,11,12)
+
+h1 <- function(x) {
+  
+  if (x < 8) {
+    
+    2*x + 3
+    
+  } else if (x >= 8 & x < 12) {
+    
+    0.5*x
+    
+  } else {
+    
+    3*x
+    
+  }
+}
+
+h1(5)
+```
+
+```{r}
+#| echo: false
+
+c |> map(h1)
+```
+
+
+## Managing Research Project in R
+
+- Suppose you work on a research project that investigates how public health agency's vaccine recommendation affects vaccination rates. 
+- In the US, people aged 50 and older are recommended to receive two doses of the recombinant zoster (shingles) vaccine to prevent shingles (painful skin rash) from developing. 
+- You want to examine whether this age-based vaccine recommendation in deed affects vaccination rates. 
+
+### Create a project directory
+
+- Create a folder "shingles" in your preferred location. 
+- Set up an R project from RStudio with the "shingles" folder as the project directory. 
+- Create a "data" sub-folder in "shingles."
+- Create a "code" sub-folder in "shingles."
+- Download ([this csv file](files/shingles_vax_usa_2022_2024.csv)) and store it in the "data" sub-folder.
+
+
+
+### Write an analysis script
+
+- R script often begins with a preamble to load packages. 
+
+```{r}
+#| output: false
+#| warning: false
+
+rm(list = ls())
+library(tidyverse)
+library(ggthemes)
+library(data.table)
+library(haven)
+library(here)
+library(tictoc)
+library(janitor)
+library(fixest)
+library(fs)
+```
+
+- Check if the working directory is set to the project directory.
+```{r}
+#| output: false
+
+getwd()
+```
+
+- You can also check the project directory by
+
+```{r}
+here::i_am("files/shingles/shingles.Rproj")
+```
+
+- Define a function for relative path.
+```{r}
+here_rel <- function(...) {
+  fs::path_rel(here::here(...))
+}
+```
+
+- Import the csv file.
+
+```{r}
+shingles_vax_usa_2022_2024 <- 
+  read_csv(here_rel("files", "shingles", "data", "shingles_vax_usa_2022_2024.csv"))
+
+# For students, the correct code might be 
+# shingles_vax_usa_2022_2024 <- 
+#   read_csv(here_rel("data", "shingles_vax_usa_2022_2024.csv"))
+```
+
+
+- Make an age-profile of vaccination rates with *ggplot2* package. 
+  - Notice that several techniques are used here.
+    - pipe operator: |> (This operator says "do XXX and then do YYY")
+    - dplyr functions: mutate(), filter()
+  - Also notice that you do not need to type *data$variable* in tidyverse.
+
+```{r}
+shingles_vax_usa_2022_2024 |> 
+  mutate(type = factor(type, levels = c("shotshngev_pct", "shotsgrxev_pct"),
+                      labels = c("Any", "Recombinant"))) |> 
+  filter(age >= 40 & age <= 60) |>
+  ggplot(aes(x = age, y = percent, shape = type)) +
+  geom_vline(xintercept = 50, linetype = "dashed") +
+  geom_point() +
+  labs(x = "Age", y = "Ever received vaccine (%)",
+       shape = "",
+       title = "Age profile of shingles vaccine in the US, 2022-2024",
+       caption = "NHIS 2022-2024. % calculated with sample person weight.") +
+  theme_stata(scheme = "s1color")
+```
+
+### Exercise 2-3
+
+- Visit [IPUMS](https://www.ipums.org/) and create your account with your university email address. You might need to enter a brief description about purpose of use.  
+- Pick a data set of your interest. 
+- Pick several variables of your interest. If you are interested in the relationship between variables X and Y, select X and Y in your sample.
+- Download the sample. This might take several minutes.
+- Create an R project.
+- Write an R script to visualize Y against X. To do so, you might need to 
+  - read data documentation carefully,
+  - aggregate the data at an appropriate level using dplyr functions (mutate(), filter(), group_by(), etc.). If you are not familiar with dplyr functions, ask me or an AI on how to use them.
