@@ -73,6 +73,7 @@ b
 
 ```{r}
 #| echo: false
+#| output: false
 c <- c(1,2,5,6,9,11,12)
 d <- numeric(length(c))
 
@@ -154,6 +155,7 @@ Repeat Exercise 2-1 using a map-reduce approach.
 
 ```{r}
 #| echo: false
+#| output: false
 c <- c(1,2,5,6,9,11,12)
 
 h1 <- function(x) {
@@ -178,6 +180,7 @@ h1(5)
 
 ```{r}
 #| echo: false
+#| output: false
 
 c |> map(h1)
 ```
