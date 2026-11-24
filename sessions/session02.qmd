@@ -1,7 +1,5 @@
 ---
 title: "Session 2: Loop, Iteration, and Data Analysis"
-execute: 
-  cache: true
 ---
 
 ## Introduction to Loop and Iteration
