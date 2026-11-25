@@ -212,6 +212,12 @@ window.Quarto = {
   <li><a href="#write-an-analysis-script" id="toc-write-an-analysis-script" class="nav-link" data-scroll-target="#write-an-analysis-script">Write an analysis script</a></li>
   <li><a href="#exercise-2-3" id="toc-exercise-2-3" class="nav-link" data-scroll-target="#exercise-2-3">Exercise 2-3</a></li>
   </ul></li>
+  <li><a href="#central-limit-theorem" id="toc-central-limit-theorem" class="nav-link" data-scroll-target="#central-limit-theorem">Central Limit Theorem</a>
+  <ul class="collapse">
+  <li><a href="#central-limit-theorem-clt" id="toc-central-limit-theorem-clt" class="nav-link" data-scroll-target="#central-limit-theorem-clt">Central Limit Theorem (CLT)</a></li>
+  <li><a href="#exercise-2-4" id="toc-exercise-2-4" class="nav-link" data-scroll-target="#exercise-2-4">Exercise 2-4</a></li>
+  </ul></li>
+  <li><a href="#confidence-interval" id="toc-confidence-interval" class="nav-link" data-scroll-target="#confidence-interval">Confidence Interval</a></li>
   </ul>
 </nav>
     </div>
@@ -540,9 +546,52 @@ dbl (2): age, percent
 <li>aggregate the data at an appropriate level using dplyr functions (mutate(), filter(), group_by(), etc.). If you are not familiar with dplyr functions, ask me or an AI on how to use them.</li>
 </ul></li>
 </ul>
-
-
 </section>
+</section>
+<section id="central-limit-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="central-limit-theorem">Central Limit Theorem</h2>
+<section id="central-limit-theorem-clt" class="level3">
+<h3 class="anchored" data-anchor-id="central-limit-theorem-clt">Central Limit Theorem (CLT)</h3>
+<p>Suppose <span class="math inline">\(\{X_{i}\}_{i=1}^{n}\)</span> are independent and identically distributed (i.i.d.) random variables with finite mean and variance. Let <span class="math inline">\(\bar{X}=\frac{1}{n}\sum_{i=1}^{n}X_{i}\)</span> denote the sample mean. Then</p>
+<p><span class="math display">\[
+\sqrt{n}\frac{\bar{X}-E[X_{i}]}{\sqrt{Var[X_{i}]}} \stackrel{a}{\sim} N(0,1)   
+\]</span></p>
+</section>
+<section id="exercise-2-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2-4">Exercise 2-4</h3>
+<ul>
+<li><p>Generate <span class="math inline">\(S=1000\)</span> random samples of size <span class="math inline">\(n=100\)</span> from a chi-squared distribution with 4 degree of freedom. Plot the density of <span class="math inline">\(\sqrt{n}\frac{\bar{X}-E[X_{i}]}{\sqrt{Var[X_{i}]}}\)</span>. (Hint: A chi-squared random variable <span class="math inline">\(X_{i}\)</span> with <span class="math inline">\(k\)</span> degree of freedom has <span class="math inline">\(E[X_{i}]=k\)</span> and <span class="math inline">\(Var[X_{i}]=2k\)</span>.)</p></li>
+<li><p>Using the same random samples, demonstrate what happens to the density when you scale <span class="math inline">\(\bar{X}\)</span> by <span class="math inline">\(n^{\frac{1}{4}}\)</span> instead of <span class="math inline">\(\sqrt{n}\)</span>. Namely, plot the density of <span class="math inline">\(n^{\frac{1}{4}}\frac{\bar{X}-E[X_{i}]}{\sqrt{Var[X_{i}]}}\)</span>.</p></li>
+<li><p>Using the same random samples, demonstrate what happens to the density when you center <span class="math inline">\(\bar{X}\)</span> by subtracting <span class="math inline">\(E[X_{i}]-1\)</span> instead of <span class="math inline">\(E[X_{i}]\)</span>? Namely, plot the density of <span class="math inline">\(\sqrt{n}\frac{\bar{X}-(E[X_{i}]-1)}{\sqrt{Var[X_{i}]}}\)</span>.</p></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="session02_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="confidence-interval" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-interval">Confidence Interval</h2>
+<ul>
+<li>Generate <span class="math inline">\(S=1000\)</span> random samples of size <span class="math inline">\(n=100\)</span> from a chi-squared distribution with 4 degree of freedom.</li>
+<li>For each sample, calculate the 95% confidence interval for <span class="math inline">\(E[X_{i}]\)</span>.</li>
+<li>Confirm that the empirical coverage rate is close to 0.95.</li>
+</ul>
+<p><span class="math display">\[
+Pr\left(-1.96\leq\sqrt{n}\frac{\bar{X}-E[X_{i}]}{\sqrt{Var[X_{i}]}}\leq1.96\right) \rightarrow 0.95, n \rightarrow \infty  
+\]</span></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.953</code></pre>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
