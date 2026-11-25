@@ -216,8 +216,8 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#central-limit-theorem-clt" id="toc-central-limit-theorem-clt" class="nav-link" data-scroll-target="#central-limit-theorem-clt">Central Limit Theorem (CLT)</a></li>
   <li><a href="#exercise-2-4" id="toc-exercise-2-4" class="nav-link" data-scroll-target="#exercise-2-4">Exercise 2-4</a></li>
+  <li><a href="#exercise-2-5-confidence-interval" id="toc-exercise-2-5-confidence-interval" class="nav-link" data-scroll-target="#exercise-2-5-confidence-interval">Exercise 2-5 (Confidence Interval)</a></li>
   </ul></li>
-  <li><a href="#confidence-interval" id="toc-confidence-interval" class="nav-link" data-scroll-target="#confidence-interval">Confidence Interval</a></li>
   </ul>
 </nav>
     </div>
@@ -574,24 +574,20 @@ dbl (2): age, percent
 </div>
 </div>
 </section>
-</section>
-<section id="confidence-interval" class="level2">
-<h2 class="anchored" data-anchor-id="confidence-interval">Confidence Interval</h2>
+<section id="exercise-2-5-confidence-interval" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2-5-confidence-interval">Exercise 2-5 (Confidence Interval)</h3>
 <ul>
 <li>Generate <span class="math inline">\(S=1000\)</span> random samples of size <span class="math inline">\(n=100\)</span> from a chi-squared distribution with 4 degree of freedom.</li>
 <li>For each sample, calculate the 95% confidence interval for <span class="math inline">\(E[X_{i}]\)</span>.</li>
 <li>Confirm that the empirical coverage rate is close to 0.95.</li>
+<li>Hint: Start from the fact that</li>
 </ul>
 <p><span class="math display">\[
 Pr\left(-1.96\leq\sqrt{n}\frac{\bar{X}-E[X_{i}]}{\sqrt{Var[X_{i}]}}\leq1.96\right) \rightarrow 0.95, n \rightarrow \infty  
 \]</span></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.953</code></pre>
-</div>
-</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
